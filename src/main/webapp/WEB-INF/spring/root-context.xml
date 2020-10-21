@@ -3,8 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-		<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- DB연결 -->
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<!-- DB 연결 -->
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
 		<property name="username" value="hr" />
 		<property name="password" value="tiger"></property>
@@ -12,16 +12,15 @@
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 	</bean>
 	
-	<!-- DB 연결정보, SQL 문의정보 -->
+	<!-- DB 연결정보, SQL문의 정보 -->
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="mapperLocations" value="classpath:database/mappers/**/*Mapper.xml"></property>
-		<property name="configLocation" value="classpath:database/config/mybatisConfig.xml"></property>
+		<property name="configLocation" value="classpath:database/config/myBatisConfig.xml"></property>
 	</bean>
 	
-	<!-- 결과 mapping -->
+	<!-- 결과 매핑  -->
 	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
-	</bean>
-	
+	</bean>	
 </beans>
