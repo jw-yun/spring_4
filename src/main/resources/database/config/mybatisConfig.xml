@@ -6,7 +6,8 @@
   <configuration>
   	<typeAliases> 		
   		<typeAlias type="java.lang.Long" alias="Long"/>
-  	
+  		<typeAlias type="com.ss.s1.board.notice.NoticeDTO" alias="NoticeDTO"/>
+		<typeAlias type="com.ss.s1.board.qna.QnaDTO" alias="QnaDTO"/>	
   	</typeAliases>
   
   
